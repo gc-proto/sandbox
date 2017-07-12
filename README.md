@@ -1,2 +1,1 @@
-# sandbox
-Sandbox, built from templates-patterns
+http://gc-proto.github.io/start-business/mvp/home-en.html
