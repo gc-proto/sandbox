@@ -1,0 +1,42 @@
+   <html>
+   <head>
+    <script type="text/javascript">
+
+
+    var randomLink = function () {
+
+        // first create an array of links
+        var links = [
+            "https://webstandard-normesweb.optimalworkshop.com/chalkmark/serad-1-en",
+            "https://webstandard-normesweb.optimalworkshop.com/chalkmark/serad-2-en",
+            "https://webstandard-normesweb.optimalworkshop.com/chalkmark/serad-3-en",
+        "https://webstandard-normesweb.optimalworkshop.com/chalkmark/serad-4-en"
+        ];
+
+        // then work out the maximum random number size
+        // by counting the number of links in the array
+        var max = (links.length)
+
+        // now generate a random number
+        var randomNumber = Math.floor(Math.random()*max);
+
+        // use that random number to retrieve a link from the array
+        var link = links[randomNumber];
+
+        // change the location of the window object
+        window.location = "http://" + link;
+
+        // Opens a new tab.
+        function OpenInNewTab(url) {
+        var win = window.open(url, '_blank');
+         win.focus();
+}
+    }
+    </script>
+	</head>
+	<body>
+		<script>
+			randomLink();
+		</script>
+	</body>
+</html>
