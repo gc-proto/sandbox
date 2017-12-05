@@ -127,7 +127,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 </div>
 </nav>
 </header>
-<aside class="prm-flpr">
+<aside class="prm-flpr" id="nunavit">
 <div class="container">
 <div class="row">
 <h2 class="wb-inv">Promotions</h2>
@@ -423,5 +423,35 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 <![endif]-->
 <script src="../GCWeb/js/theme.min.js"></script>
-</body>
+<!-- Piwik A/B Test -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['AbTesting::create', {
+        name: 'No_carousel_A-B', // you can also use '1' (ID of the experiment) to hide the name
+        percentage: 100,
+        includedTargets: [{"attribute":"url","inverted":"0","type":"equals_simple","value":"https:\/\/gc-proto.github.io\/sandbox\/experimental\/campaign-en.html"}],
+        excludedTargets: [],
+        variations: [
+            {
+                name: 'original',
+                activate: function (event) {
+                    // usually nothing needs to be done here
+                }
+            },
+            {
+                name: 'No-carousel', // you can also use '1' (ID of the variation) to hide the name
+                activate: function(event) {
+                  nunavit.style.visibility='hidden';  
+                  // eg $('#btn').attr('style', 'color: ' + this.name + ';');
+                }
+            }            
+        ],
+        trigger: function () {
+            return true; // here you can further customize which of your visitors will participate in this experiment
+        }
+    }]);
+</script>
+<!-- Piwik A/B Test -->
+  
+  </body>
 </html>
