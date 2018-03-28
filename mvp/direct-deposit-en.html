@@ -127,9 +127,14 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
     </div>
   </div>
 
+	<div class="wb-frmvld"> 
+	  <form method="get">
 		<div class="wb-fieldflow" data-wb-fieldflow='{
 				"renderas":"radio",
-				"default": {"action": "addClass", "source":"#result-1,#result-2,#result-3,#result-4,#result-5,#result-6,#feedback,#EI,#CPP,#OAS,#Taxes,#CCB,#WITB,#Vet,#CSB,#sc1,#sc2,#callEI,#callEI2,#callCPP,#callCPP2,#cra1,#cra2,#cra3,#cra4,#vac1,#vac2,#vac3,#vac4,#csb1,#csb2,#csb3,#csb4", "class":"hidden"}
+				"noForm": true,
+				"base": {"live": true},
+				"default": {"action": "addClass", "source":"#result-1,#result-2,#result-3,#result-4,#result-5,#result-6,#feedback,#question2button", "class":"hidden"},
+				"reset": {"action": "addClass", "source":"#EI,#CPP,#Taxes,#CCB,#WITB,#Vet,#CSB,#sc1,#sc2,#callEI,#callEI2,#callCPP,#callCPP2,#cra1,#cra2,#cra3,#cra4,#vac1,#vac2,#vac3,#vac4,#csb1,#csb2,#csb3,#csb4", "class":"hidden"}
 			}'>
 			<p>What service do you use or want to use direct deposit for?</p>
 			<ul>
@@ -140,7 +145,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action":"removeClass", "source":"#callEI", "class":"hidden"},
 					{"action":"removeClass", "source":"#callEI2", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Employment insurance benefits or leave</li>
+				]'>Employment Insurance (EI) benefits or leave</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#CPP", "class":"hidden"},
 					{"action":"removeClass", "source":"#sc1", "class":"hidden"},
@@ -148,15 +153,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action":"removeClass", "source":"#callCPP", "class":"hidden"},
 					{"action":"removeClass", "source":"#callCPP2", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Canadian Pension Plan</li>
-				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#OAS", "class":"hidden"},
-					{"action":"removeClass", "source":"#sc1", "class":"hidden"},
-					{"action":"removeClass", "source":"#sc2", "class":"hidden"},
-					{"action":"removeClass", "source":"#callCPP", "class":"hidden"},
-					{"action":"removeClass", "source":"#callCPP2", "class":"hidden"},
-					{"action": "append", "source":"#question2"}
-				]'>Old Age Security</li>
+				]'>Canadian Pension Plan (CPP) or Old Age Security (OAS)</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#Taxes", "class":"hidden"},
 					{"action":"removeClass", "source":"#cra1", "class":"hidden"},
@@ -204,35 +201,46 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 			</ul>
 		</div>
 		
-		<div id="question2" class="hidden wb-fieldflow-sub" data-wb-fieldflow-sub='{"renderas":"radio"}'>
-			<p>Are you a resident in Canada?</p>
+		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+			<p>Are you setting up direct deposit for a foreign bank account?</p>
 			<ul>
-				<li data-wb-fieldflow='{ "action": "append", "source":"#question3" }'>Yes</li>
-				<li><a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false">No</a></li>
+				<li data-wb-fieldflow='{"action": "append", "source":"#question3" }'>Yes</li>
+				<li data-wb-fieldflow='{"action": "removeClass", "source":"#question2button", "class": "hidden"}'>No</li>
 			</ul>
 		</div>
 		
-		<div id="question3" class="hidden wb-fieldflow-sub" data-wb-fieldflow-sub='{"renderas":"radio"}'>
-			<p>Do you have an online account for <span id="EI">Employment insurance benefits or leave</span><span id="CPP">Canadian Pension Plan</span><span id="OAS">Old Age Security</span><span id="Taxes">Tax refunds or credits</span><span id="CCB">Canada Child Benefit (CCB)</span><span id="WITB">Working Income Tax Benefit</span><span id="Vet">Veteran benefits</span><span id="CSB">Canada savings or premium bonds</span>?</p>
+		<div id="question2button" class="hidden" >
+			<a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false" class="btn btn-primary">Continue</a>
+		</div>
+		
+		<div id="question3" class="hidden wb-fieldflow-sub" data-wb-fieldflow='{"renderas":"radio"}'>
+			<p>Do you have an online account for <span id="EI" class="hidden">Employment insurance benefits or leave</span><span id="CPP" class="hidden">Canadian Pension Plan or Old Age Security</span><span id="Taxes" class="hidden">Tax refunds or credits</span><span id="CCB" class="hidden">Canada Child Benefit (CCB)</span><span id="WITB" class="hidden">Working Income Tax Benefit</span><span id="Vet" class="hidden">Veteran benefits</span><span id="CSB" class="hidden">Canada savings or premium bonds</span>?</p>
 			<ul>
 				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-1", "class":"hidden"}'>Yes</li>
 				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-2", "class":"hidden"}'>No</li>
 			</ul>
 		</div>
+	
   
 		<div id="result-1" class="hidden">
 			<section class="panel panel-default">
 			  <header class="panel-heading">
-			   <h2 id="sc1" class="panel-title">Direct deposit with Service Canada</h2>
-			   <h2 id="cra1" class="panel-title">Direct deposit with the Canada Revenue Agency</h2>
-			   <h2 id="vac1" class="panel-title">Direct deposit with Veterans Affairs Canada</h2>
-			   <h2 id="csb1" class="panel-title">Direct deposit with Canada Savings Bond</h2>
+			   <h2 id="sc1" class="hidden panel-title">Direct deposit with Service Canada</h2>
+			   <h2 id="cra1" class="hidden panel-title">Direct deposit with the Canada Revenue Agency</h2>
+			   <h2 id="vac1" class="hidden panel-title">Direct deposit with Veterans Affairs Canada</h2>
+			   <h2 id="csb1" class="hidden panel-title">Direct deposit with Canada Savings Bond</h2>
 			  </header>
-			  <div id="Resident" class="hidden panel-body">
-				<p id="sc2" class="hidden">Sign up for direct deposit or modify your payment details in <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">My Service Canada Account</a>.</p>
-				<p id="cra2" class="hidden">Sign up for direct deposit or modify your payment details with Canada Revenue Agency's <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">My Account</a>.</p>
-				<p id="vac2" class="hidden">Sign up for direct deposit or modify your payment details with Veteran Affair's <a href="http://www.veterans.gc.ca/eng/e_services">My VAC Account</a>.</p>
-				<p id="csb2" class="hidden">Sign up for direct deposit or modify your payment details with the Bank of Canada's <a href="https://www.mybonds.gc.ca/taskmanager.cfm?newLang=EN&taskname=logon">CSB Online Services</a>.<br />For step by step instructions, see <a href="https://www.csb.gc.ca/payroll-savings-program/employees/redeem-bonds/"></a></p>
+			  <div id="sc2" class="hidden panel-body">
+				<p>Sign up for direct deposit or modify your payment details in <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">My Service Canada Account</a>.</p>
+			  </div>
+			  <div id="cra2" class="hidden panel-body">
+				<p>Sign up for direct deposit or modify your payment details with Canada Revenue Agency's <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">My Account</a>.</p>
+			  </div>
+			  <div id="vac2" class="hidden panel-body">
+				<p>Sign up for direct deposit or modify your payment details with Veteran Affair's <a href="http://www.veterans.gc.ca/eng/e_services">My VAC Account</a>.</p>
+			  </div>
+			  <div id="csb2" class="hidden panel-body">
+				<p>Sign up for direct deposit or modify your payment details with the Bank of Canada's <a href="https://www.mybonds.gc.ca/taskmanager.cfm?newLang=EN&taskname=logon">CSB Online Services</a>.<br />For step by step instructions, see <a href="https://www.csb.gc.ca/payroll-savings-program/employees/redeem-bonds/"></a></p>
 			  </div>
 			</section>
 		</div>
@@ -240,13 +248,13 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 		<div id="result-2" class="hidden">
 			<section class="panel panel-default">
 			  <header class="panel-heading">
-			   <h2 id="callEI" class="panel-title">Direct deposit for Employment Insurance benefits and leave by phone</h2>
-			   <h2 id="callCPP" class="panel-title">Direct deposit for Canada Pension Plan and Old Age Security by phone</h2>
-			   <h2 id="cra3" class="panel-title">Direct deposit with the Canada Revenue Agency by phone</h2>
-			   <h2 id="vac3" class="panel-title">Direct deposit with Veterans Affairs Canada by mail</h2>
-			   <h2 id="csb3" class="panel-title">Direct deposit with Canada Savings Bond</h2>
+			   <h2 id="callEI" class="hidden panel-title">Direct deposit for Employment Insurance benefits and leave by phone</h2>
+			   <h2 id="callCPP" class="hidden panel-title">Direct deposit for Canada Pension Plan and Old Age Security by phone</h2>
+			   <h2 id="cra3" class="hidden panel-title">Direct deposit with the Canada Revenue Agency by phone</h2>
+			   <h2 id="vac3" class="hidden panel-title">Direct deposit with Veterans Affairs Canada by mail</h2>
+			   <h2 id="csb3" class="hidden panel-title">Direct deposit with Canada Savings Bond</h2>
 			  </header>
-			  <div class="hidden panel-body">				
+			  <div class="panel-body">				
 				<div id="callEI2" class="hidden">
 					<p>Call us at</p>
 					<ul>
@@ -371,6 +379,9 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 			  </div>
 			</section>
 		</div>
+	</div>
+ </form>
+</div>
  
  </section> 
 <div class="row pagedetails">
