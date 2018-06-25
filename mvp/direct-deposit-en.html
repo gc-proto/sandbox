@@ -123,264 +123,231 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 	<div class="wb-frmvld">
 	  <form method="get">
-		<div class="wb-fieldflow" data-wb-fieldflow='{
+		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
 				"renderas":"radio",
 				"noForm": true,
 				"base": {"live": true},
-				"default": {"action": "addClass", "source":"#result-1,#result-2,#result-3,#result-4,#result-5,#result-6,#feedback,#question2button", "class":"hidden"},
-				"reset": {"action": "addClass", "source":"#EI,#CPP,#Taxes,#CCB,#WITB,#Vet,#CSB,#sc1,#sc2,#callEI,#callEI2,#callCPP,#callCPP2,#cra1,#cra2,#cra3,#cra4,#vac1,#vac2,#vac3,#vac4,#csb1,#csb2,#csb3,#csb4", "class":"hidden"}
+				"default": {"action": "addClass", "source":"#question1,question2,question-biz,#business-dd,#foreign-acc,#canadian-acc,#canadian-taxes,#other-dd", "class":"hidden"},
+				"reset": [{"action": "addClass", "source":"#cra-abroad,#taxes,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
 			}'>
-			<p>What service do you use or want to use direct deposit for?</p>
+			<p>Select your payment for direct deposit:</p>
 			<ul>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#EI", "class":"hidden"},
-					{"action":"removeClass", "source":"#sc1", "class":"hidden"},
-					{"action":"removeClass", "source":"#sc2", "class":"hidden"},
-					{"action":"removeClass", "source":"#callEI", "class":"hidden"},
-					{"action":"removeClass", "source":"#callEI2", "class":"hidden"},
-					{"action": "append", "source":"#question2"}
-				]'>Employment Insurance (EI) benefits or leave</li>
+					{"action":"removeClass", "source":"#taxes", "class":"hidden"},
+					{"action": "removeClass", "source":"#cra-abroad", "class": "hidden"},
+					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
+					{"action": "append", "source":"#question-biz"}
+				]'>Tax refunds and tax benefits (including the Canada Child Benefit)</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#CPP", "class":"hidden"},
-					{"action":"removeClass", "source":"#sc1", "class":"hidden"},
-					{"action":"removeClass", "source":"#sc2", "class":"hidden"},
-					{"action":"removeClass", "source":"#callCPP", "class":"hidden"},
-					{"action":"removeClass", "source":"#callCPP2", "class":"hidden"},
+					{"action":"removeClass", "source":"#cppoas", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Canadian Pension Plan (CPP) or Old Age Security (OAS)</li>
+				]'>Canada Pension Plan (CPP) or Old Age Security (OAS)</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#Taxes", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra1", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra2", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra3", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra4", "class":"hidden"},
+					{"action":"removeClass", "source":"#annuities", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Tax refunds or credits</li>
+				]'>Canadian Government Annuities</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#CCB", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra1", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra2", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra3", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra4", "class":"hidden"},
+					{"action":"removeClass", "source":"#eileave", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Canada Child Benefit (CCB)</li>
+				]'>Employment Insurance (EI) benefits and leave</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#WITB", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra1", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra2", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra3", "class":"hidden"},
-					{"action":"removeClass", "source":"#cra4", "class":"hidden"},
+					{"action":"removeClass", "source":"#apprenticeship", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Working Income Tax Benefit</li>
+				]'>Apprenticeship grants</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#Vet", "class":"hidden"},
-					{"action":"removeClass", "source":"#vac1", "class":"hidden"},
-					{"action":"removeClass", "source":"#vac2", "class":"hidden"},
-					{"action":"removeClass", "source":"#vac3", "class":"hidden"},
-					{"action":"removeClass", "source":"#vac4", "class":"hidden"},
+					{"action":"removeClass", "source":"#veterans", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Veteran benefits</li>
+				]'>Veteran's Allowance Benefits</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#CSB", "class":"hidden"},
-					{"action":"removeClass", "source":"#csb1", "class":"hidden"},
-					{"action":"removeClass", "source":"#csb2", "class":"hidden"},
-					{"action":"removeClass", "source":"#csb3", "class":"hidden"},
-					{"action":"removeClass", "source":"#csb4", "class":"hidden"},
+					{"action":"removeClass", "source":"#pension", "class":"hidden"}
+				]'>Federal Public Service Pension Plan</li>
+				<li data-wb-fieldflow='[
+					{"action":"removeClass", "source":"#bonds", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Canada savings or premium bonds</li>
-				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-3", "class":"hidden"}'>Apprenticeship grants</li>
-				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-4", "class":"hidden"}'>Government annuities</li>
-				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-5", "class":"hidden"}'>Payments from Indigenous and Northern Affairs Canada (INAC)</li>
-				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-6", "class":"hidden"}'>Public service pay and pension</li>
+				]'>Canada Premium Savings Bond and Canada Savings Bond</li>
+				<li data-wb-fieldflow='[
+					{"action":"removeClass", "source":"#indigenous", "class":"hidden"},
+					{"action": "append", "source":"#question-biz"}
+				]'>Indigenous payments, grants and contributions</li>
+				<li data-wb-fieldflow='{"action":"removeClass", "source":"#other-dd", "class":"hidden"}'>Other payments</li>
+			</ul>
+		</div>
+
+		<div id="question-biz" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+			<p>Are you setting up direct deposit for a business/supplier?</p>
+			<ul>
+				<li data-wb-fieldflow='{"action": "removeClass", "source":"#business-dd", "class": "hidden"}'>Yes - for a business</li>
+				<li data-wb-fieldflow='{"action": "append", "source":"#question2"}'>No - for me or another individual</li>
 			</ul>
 		</div>
 
 		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
-			<p>Are you setting up direct deposit for a foreign bank account?</p>
+			<p>Do you want your this payment deposited into a Canadian or Foreign bank account?</p>
 			<ul>
-				<li data-wb-fieldflow='{"action": "removeClass", "source":"#question2button", "class": "hidden"}'>Yes</li>
-				<li data-wb-fieldflow='{"action": "append", "source":"#question3" }'>No</li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#canadian-acc", "class": "hidden"},
+					{"action": "removeClass", "source":"#canadian-taxes", "class": "hidden"}
+				]'>Canadian</li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#foreign-acc", "class": "hidden"},
+					{"action": "removeClass", "source":"#canadian-taxes", "class": "hidden"}
+				]'>Foreign</li>
 			</ul>
 		</div>
 
-		<div id="question2button" class="hidden" >
-			<a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false" class="btn btn-primary">Continue</a>
-		</div>
+		<!-- display Canadian -->
+		 <!-- channels (expand collapse) -->
+		 <!-- separate display for pension + other -->
+		 <!-- Make business / supplier a question under GST and indigenous or CBSA commercial refunds -->
 
-		<div id="question3" class="hidden wb-fieldflow-sub" data-wb-fieldflow='{"renderas":"radio"}'>
-			<p>Do you have an online account for <span id="EI" class="hidden">Employment insurance benefits or leave</span><span id="CPP" class="hidden">Canadian Pension Plan or Old Age Security</span><span id="Taxes" class="hidden">Tax refunds or credits</span><span id="CCB" class="hidden">Canada Child Benefit (CCB)</span><span id="WITB" class="hidden">Working Income Tax Benefit</span><span id="Vet" class="hidden">Veteran benefits</span><span id="CSB" class="hidden">Canada savings or premium bonds</span>?</p>
-			<ul>
-				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-1", "class":"hidden"}'>Yes</li>
-				<li data-wb-fieldflow='{"action":"removeClass", "source":"#result-2", "class":"hidden"}'>No</li>
-			</ul>
-		</div>
-
-		<div id="result-1" class="hidden">
-			<section class="panel panel-default">
-			  <header class="panel-heading">
-			   <h2 id="sc1" class="hidden panel-title">Direct deposit with Service Canada</h2>
-			   <h2 id="cra1" class="hidden panel-title">Direct deposit with the Canada Revenue Agency</h2>
-			   <h2 id="vac1" class="hidden panel-title">Direct deposit with Veterans Affairs Canada</h2>
-			   <h2 id="csb1" class="hidden panel-title">Direct deposit with Canada Savings Bond</h2>
-			  </header>
-			  <div id="sc2" class="hidden panel-body">
-				<p>Sign up for direct deposit or modify your payment details in <a href="https://www.canada.ca/en/employment-social-development/services/my-account.html">My Service Canada Account</a>.</p>
-			  </div>
-			  <div id="cra2" class="hidden panel-body">
-				<p>Sign up for direct deposit or modify your payment details with Canada Revenue Agency's <a href="https://www.canada.ca/en/revenue-agency/services/e-services/cra-login-services.html">My Account</a>.</p>
-			  </div>
-			  <div id="vac2" class="hidden panel-body">
-				<p>Sign up for direct deposit or modify your payment details with Veteran Affair's <a href="http://www.veterans.gc.ca/eng/e_services">My VAC Account</a>.</p>
-			  </div>
-			  <div id="csb2" class="hidden panel-body">
-				<p>Sign up for direct deposit or modify your payment details with the Bank of Canada's <a href="https://www.mybonds.gc.ca/taskmanager.cfm?newLang=EN&taskname=logon">CSB Online Services</a>.<br />For step by step instructions, see <a href="https://www.csb.gc.ca/payroll-savings-program/employees/redeem-bonds/"></a></p>
-			  </div>
-			</section>
-		</div>
-
-		<div id="result-2" class="hidden">
-			<section class="panel panel-default">
-			  <header class="panel-heading">
-			   <h2 id="callEI" class="hidden panel-title">Direct deposit for Employment Insurance benefits and leave by phone</h2>
-			   <h2 id="callCPP" class="hidden panel-title">Direct deposit for Canada Pension Plan and Old Age Security by phone</h2>
-			   <h2 id="cra3" class="hidden panel-title">Direct deposit with the Canada Revenue Agency by phone</h2>
-			   <h2 id="vac3" class="hidden panel-title">Direct deposit with Veterans Affairs Canada by mail</h2>
-			   <h2 id="csb3" class="hidden panel-title">Direct deposit with Canada Savings Bond</h2>
-			  </header>
-			  <div class="panel-body">
-				<div id="callEI2" class="hidden">
-					<ul>
-						<li><b>Telephone:</b> 1-800-206-7218</li>
-						<li><b>Teletypewriter (TTY):</b><abbr title="Teletypewriter">TTY</abbr>:1-800-529-3742</li>
-					</ul>
+			 <div id="foreign-acc" class="hidden">
+				 <section id="cra-abroad" class=" hidden panel panel-default">
+					 <header class="panel-heading">
+						<h2 class="panel-title">Direct deposit for CRA from abroad</h2>
+					 </header>
+					 <div class="panel-body">
+					 	<p>The Canada Revenue Agency does not yet issue payments to foreign bank accounts. If you have or can get a Canadian bank account, please use the directions below for direct deposit in Canada.</p>
+					 </div>
+				 </section>
+				<div id="foreign-available" class="" >
+					<a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false" class="btn btn-primary">Direct deposit with a foreign bank account</a><br /><br />
 				</div>
-				<div id="callCPP2" class="hidden">
-					<ul>
-						<li><b>Telephone:</b> 1-800-277-9914</li>
-						<li><b>Teletypewriter (TTY):</b><abbr title="Teletypewriter">TTY</abbr>:1-800-255-4786</li>
-					</ul>
-				</div>
-				<div id="cra4" class="hidden">
-					<ul>
-						<li><b>Telephone:</b> 1-800-959-8281</li>
-					</ul>
-				</div>
-				<div id="vac4" class="hidden">
-					<p>Please fill out the <a href="/eng/forms/document/433?download=1" rel="external"><em>Direct Deposit Request</em></a> form and provide the new information.</p>
-					<p><span class="bold">Once completed, please send your <a href="/eng/forms/document/433?download=1" rel="external"><em>Direct Deposit Request</em></a> form to:</span></p>
-					<p class="mrgn-lft-lg">Veterans Affairs Canada
-					<br />PO Box 6000
-					<br />Matane QC G4W 0E4</p>
-					<p><span class="bold">or drop it off to <a href="/eng/contact">your local VAC office</a></span>.</p>
-				</div>
-				<div id="csb4" class="hidden">
-					<p>For direct deposit with a Single Plan, you will have to:</p>
-					<ol>
-					<li>Sign up for <a href="https://www.mybonds.gc.ca">CSB Online Services</a> and manage direct deposit through the account.</li>
-					</ol>
-					<p>If you have a Joint or Third-Party Plan, you must complete the <a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Change of Address and Direct Deposit (COADD) Form</a>. For Joint Plans, the bank account must be under the names of all Plan owners, and the form must be signed by all Plan owners.</p>
-				</div>
-				<p>You will need the following information:<p>
-				<ul>
-					<li>Your name, address and date of birth</li>
-                    <li>Your payment <span class="wrap-none">type(s)</span> and the associated personal; <span class="wrap-none">identifier(s)</span>, for example: your social insurance number (SIN) or your file number</li>
-                    <li>A void cheque or your bank account information and</li>
-                    <li>You may be asked to provide additional information during the registration process to validate your identity</li>
-				</ul>
-			  </div>
-			</section>
-		</div>
+			 </div>
 
-		<div id="result-3" class="hidden">
-			<section class="panel panel-default">
-			  <header class="panel-heading">
-			   <h2 class="panel-title">Direct deposit for apprenticeship grants</h2>
-			  </header>
-			  <div class="panel-body">
-				<ul>
-					<li><b>Telephone:</b> 1-866-724-3644</li>
-					<li><b>Teletypewriter (TTY):</b><abbr title="Teletypewriter">TTY</abbr>:1-866-909-9757</li>
-				</ul>
-				<p>Make sure you have the following information when you call us:<p>
-				<ul>
-					<li>Your name, address and date of birth</li>
-					<li>Your payment <span class="wrap-none">type(s)</span> and the associated personal; <span class="wrap-none">identifier(s)</span>, for example: your social insurance number (SIN) or your file number</li>
-					<li>A void cheque or your bank account information and</li>
-					<li>You may be asked to provide additional information during the registration process to validate your identity</li>
-				</ul>
-			  </div>
-			</section>
-		</div>
 
-		<div id="result-4" class="hidden">
-			<section class="panel panel-default">
-			  <header class="panel-heading">
-			   <h2 class="panel-title">Direct deposit for government annuities</h2>
-			  </header>
-			  <div class="panel-body">
-				<ul>
-					<li><b>Telephone:</b> 1-800-561-7922</li>
-				</ul>
-				<p>Make sure you have the following information when you call us:<p>
-				<ul>
-					<li>Your name, address and date of birth</li>
-					<li>Your payment <span class="wrap-none">type(s)</span> and the associated personal; <span class="wrap-none">identifier(s)</span>, for example: your social insurance number (SIN) or your file number</li>
-					<li>A void cheque or your bank account information and</li>
-					<li>You may be asked to provide additional information during the registration process to validate your identity</li>
-				</ul>
-			  </div>
-			</section>
-		</div>
+			<div id="canadian-acc" class="hidden">
+					<div id="bonds" class="hidden" >
+						<p><a href="https://www.mybonds.gc.ca/taskmanager.cfm?newLang=EN&taskname=logon" class="btn btn-lg btn-primary mrgn-tp-md">Bank of Canada direct deposit online</a></p>
+						<h2>Other ways to sign up or change bank information for Canada Premium Savings Bonds and Canada Savings Bonds</h2>
+						<dl class="dl-horizontal">
+					  <dt>By mail:</dt>
+						<dd>complete this form and send it to the address within.<ul><li><a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Bank of Canada direct deposit form</a></li></dd>
+						</dl>
+					</div>
 
-		<div id="result-5" class="hidden">
-			<section class="panel panel-default">
-			  <header class="panel-heading">
-			   <h2 class="panel-title">Direct deposit from Indigenous and Northern Affairs Canada (INAC)</h2>
-			  </header>
-			  <div class="panel-body">
-				<p>Please complete the <a href="http://www.aadnc-aandc.gc.ca/eng/1100100010801/1100100010804">Indigenous and Northern Affairs Canada direct deposit form</a> and return it to the address within.</p>
-			  </div>
-			</section>
-		</div>
+					<div id="veterans" class="hidden" >
+						<p><a href="http://www.veterans.gc.ca/eng/e_services" class="btn btn-lg btn-primary mrgn-tp-md">Veterans direct deposit online</a></p>
+						<h2>Other ways to sign up or change bank information for Veterans Allowances and Benefits</h2>
+						<dl class="dl-horizontal">
+					  <dt>By mail:</dt>
+						<dd>complete this form and send it to the address on the page.<ul><li><a href="http://www.veterans.gc.ca/eng/services/resources/direct-deposit">veterans direct deposit instructions by mail</a></li></dd>
+						</dl>
+					</div>
 
-		<div id="result-6" class="hidden">
-			<section class="panel panel-default">
-			  <header class="panel-heading">
-			   <h2 class="panel-title">Direct deposit with the Government of Canada Pension Centre</h2>
-			  </header>
-			  <div class="panel-body">
-				<ul>
-					<li><b>Telephone:</b> 1&#8209;800&#8209;561&#8209;7930</li>
-					<li><b>Teletypewriter (TTY):</b>
-						<abbr title="Teletypewriter">TTY</abbr>:506&#8209;533&#8209;5990
-						<br> (collect calls accepted)</li>
-				</ul>
-				<p>Make sure you have the following information when you call us:<p>
-				<ul>
-					<li>Your name, address and date of birth</li>
-					<li>Your payment <span class="wrap-none">type(s)</span> and the associated personal; <span class="wrap-none">identifier(s)</span>, for example: your social insurance number (SIN) or your file number</li>
-					<li>A void cheque or your bank account information and</li>
-					<li>You may be asked to provide additional information during the registration process to validate your identity</li>
-				</ul>
-			  </div>
-			</section>
-		</div>
-	</div>
+					<div id="cppoas" class="hidden">
+						<p><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My Service Canada Account</a></p>
+						<section class="gc-cntct-lst">
+						<h2>Other ways to sign up or change bank information for CPP or OAS</h2>
+						<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>1-800-277-9914</dd>
+						<dt>By TTY:</dt>
+						<dd>1-800-255-4786</dd>
+						<dt>In person:</dt>
+						<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
+						<dt>By mail (up to 3 months to process):</dt>
+						<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<br><br><ul><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
+						</dl>
+					</div>
+
+					<div id="annuities" class="hidden">
+						<p><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My Service Canada Account</a></p>
+						<section class="gc-cntct-lst">
+						<h2>Other ways to sign up or change bank information for Canadian Government Annuities</h2>
+						<dl class="dl-horizontal">
+						<dt>By phone (Canada and the US):</dt>
+						<dd>1-800-561-7922 (Monday to Friday, 8am to 4pm AST)</dd>
+						<dt>By Phone (outside North America):</dt>
+						<dd>1-506-548-7972 (call collect; Monday to Friday, 8am to 4pm AST)</dd>
+						<dt>By Fax:</dt>
+						<dd>1-506-548-7428 (Monday to Friday, 8am to 4pm AST)</dd>
+					</div>
+
+					<div id="eileave" class="hidden">
+						<p><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My Service Canada Account</a></p>
+						<section class="gc-cntct-lst">
+						<h2>Other ways to sign up or change bank information for EI and leave</h2>
+						<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>1-800-206-7218</dd>
+						<dt>By TTY:</dt>
+						<dd>1-800-529-3742</dd>
+						<dt>In person:</dt>
+						<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
+					</div>
+
+					<div id="apprenticeship" class="hidden">
+						<h2>Sign up or change banking information for apprenticeship grants</h2>
+						<dt>By phone:</dt>
+						<dd>1-866-724-3644</dd>
+						<dt>By TTY:</dt>
+						<dd>1-866-909-9757</dd>
+					</div>
+
+					<div id="indigenous" class="hidden">
+						<h2>Sign up or change banking information for apprenticeship grants</h2>
+						<dt>By phone:</dt>
+						<dd>1-866-724-3644</dd>
+						<dt>By TTY:</dt>
+						<dd>1-866-909-9757</dd>
+					</div>
+
+			</div>
+			<div id="canadian-taxes" class="hidden">
+				<div id="taxes" class="hidden">
+					<p><a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My CRA Account (for individuals)</a></p>
+					<section class="gc-cntct-lst">
+					<h2>Other ways to sign up or change bank information for:</h2>
+						<ul>
+							<li>Income Tax Refunds</li>
+							<li>Working Income Tax benefits</li>
+							<li>Canada Child Benefit</li>
+							<li>GST/HST Credit or Provincial Equivalents</li>
+						</ul>
+					<dl class="dl-horizontal">
+					<dt>By phone:</dt>
+					<dd>1-800-959-8281</dd>
+					<dt>In person:</dt>
+					<dd>Most financial institutions in Canada, including those listed below, will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.<ul><li>Bank of Montreal</li><li>Canadian Imperial Bank of Commerce (CIBC)</li><li>Desjardins</li><li>Royal Bank of Canada (RBC)</li><li>Toronto Dominion (TD)</li><li>Scotiabank</li><li>most credit unions</li></ul></dd>
+					<dt>By mail (up to 3 months to process):</dt>
+					<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<ul><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
+				</div>
+			</div>
+
+			<div id="pension" class="hidden">
+				<h2>Sign up or change bank information for the Federal Public Service Pension Plan</h2>
+				<dl class="dl-horizontal">
+				<dt>By phone:</dt>
+				<dd>1-800-561-7930 (toll-free; Monday to Friday 8am to 4pm your local time)</dd>
+				<dt>By email:</dt>
+				<dd>To pwgsc.pensioncentre-centredespensions.tpsgc@pwgsc-tpsgc.gc.ca</dd>
+				<dt>In person:</dt>
+				<dd>Most financial institutions in Canada, including those listed below, will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.<ul><li>Bank of Montreal</li><li>Canadian Imperial Bank of Commerce (CIBC)</li><li>Desjardins</li><li>Royal Bank of Canada (RBC)</li><li>Toronto Dominion (TD)</li><li>Scotiabank</li><li>most credit unions</li></ul></dd>
+				<dt>By mail (up to 3 months to process):</dt>
+				<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<ul><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
+			</div>
+
+			<div id="business-dd" class="hidden" >
+				<a href="http://www.tpsgc-pwgsc.gc.ca/recgen/dd/entreprise-business-eng.html" class="btn btn-primary">Direct deposit for businesses and suppliers</a><br /><br />
+			</div>
+
+
+			<div id="other-dd" class="hidden">
+				<section class="panel panel-default">
+					<header class="panel-heading">
+					 <h2 class="panel-title">Didn't find your payment?</h2>
+					</header>
+					<div class="panel-body">
+						<p>If you did not see the service that issues payments to you</p>
+							<ul><li><a href="">tell us what we missed</a></li></ul>
+						<p>You can also</p>
+							<ul><li><a href="https://www.canada.ca/en/government/dept.html">find the department that pays you in the departments listing</a></li></ul>
+					</div>
+				</section>
+			</div>
+
  </form>
 </div>
-
-	 <div id="feedback">
-		<section class="panel panel-default">
-		  <header class="panel-heading">
-		   <h2 class="panel-title">Did you find what you were looking for?</h2>
-		  </header>
-		  <div class="panel-body">
-			<p>If you didn't, please <a href="">leave us feedback</a> so we can improve the options listed here.</p>
-
-		  </div>
-		</section>
-	</div>
-
 
  </section>
 <div class="row pagedetails">
