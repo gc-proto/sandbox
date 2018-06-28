@@ -121,6 +121,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
  </div>
  <section>
 
+
 	<div class="wb-frmvld">
 	  <form method="get">
 		<div id="question1" class="wb-fieldflow" data-wb-fieldflow='{
@@ -133,6 +134,10 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 			<p>Select your payment for direct deposit:</p>
 			<ul>
 				<li data-wb-fieldflow='[
+					{"action":"removeClass", "source":"#cppoas", "class":"hidden"},
+					{"action": "append", "source":"#question2"}
+				]'>Canada Pension Plan (CPP) or Old Age Security (OAS)</li>
+				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#taxes", "class":"hidden"},
 					{"action": "removeClass", "source":"#cra-abroad", "class": "hidden"},
 					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
@@ -144,10 +149,6 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
 					{"action": "append", "source":"#question2"}
 				]'>Canada Child Benefit</li>
-				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#cppoas", "class":"hidden"},
-					{"action": "append", "source":"#question2"}
-				]'>Canada Pension Plan (CPP) or Old Age Security (OAS)</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#annuities", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
@@ -305,27 +306,26 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					<p><a href="https://www.mybonds.gc.ca/taskmanager.cfm?newLang=EN&taskname=logon" class="btn btn-lg btn-primary mrgn-tp-md">Bank of Canada direct deposit online</a></p>
 					<h2>Other ways to sign up or change bank information for Canada Premium Savings Bonds and Canada Savings Bonds</h2>
 					<dl class="dl-horizontal">
-					<dt>By mail:</dt>
-					<dd>complete this form and send it to the address within.<ul><li><a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Bank of Canada direct deposit form</a></li></dd>
+						<dt>By mail:</dt>
+						<dd>complete this form and send it to the address within.<ul><li><a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Bank of Canada direct deposit form</a></li></dd>
 					</dl>
 				</div>
 
 				<div id="eileave" class="hidden">
 					<p><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My Service Canada Account</a></p>
-					<section class="gc-cntct-lst">
 					<h2>Other ways to sign up or change bank information for EI and leave</h2>
 					<dl class="dl-horizontal">
-					<dt>By phone:</dt>
-					<dd>1-800-206-7218</dd>
-					<dt>By TTY:</dt>
-					<dd>1-800-529-3742</dd>
-					<dt>In person:</dt>
-					<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
+						<dt>By phone:</dt>
+						<dd>1-800-206-7218</dd>
+						<dt>By TTY:</dt>
+						<dd>1-800-529-3742</dd>
+						<dt>In person:</dt>
+						<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
+					</dl>
 				</div>
 
 				<div id="taxes" class="hidden">
 					<p><a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My CRA Account (for individuals)</a></p>
-					<section class="gc-cntct-lst">
 					<h2>Other ways to sign up or change bank information for:</h2>
 						<ul>
 							<li>Income Tax Refunds</li>
@@ -340,6 +340,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					<dd>Most financial institutions in Canada, including those listed below, will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.<ul><li>Bank of Montreal</li><li>Canadian Imperial Bank of Commerce (CIBC)</li><li>Desjardins</li><li>Royal Bank of Canada (RBC)</li><li>Toronto Dominion (TD)</li><li>Scotiabank</li><li>most credit unions</li></ul></dd>
 					<dt>By mail (up to 3 months to process):</dt>
 					<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<ul><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
+					</dl>
 				</div>
 			</div>
 
