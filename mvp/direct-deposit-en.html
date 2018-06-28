@@ -128,7 +128,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				"noForm": true,
 				"base": {"live": true},
 				"default": {"action": "addClass", "source":"#question1,question2,question-biz,#business-dd,#foreign-acc,#canadian-acc,#canadian-taxes,#other-dd", "class":"hidden"},
-				"reset": [{"action": "addClass", "source":"#cra-abroad,#taxes,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
+				"reset": [{"action": "addClass", "source":"#cra-abroad,#taxes,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes,#Indigenous-foreign-NA,#apprenticeship-foreign-NA,#EI-foreign-NA,#bonds-foreign-NA,#other-NA-abroad", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
 			}'>
 			<p>Select your payment for direct deposit:</p>
 			<ul>
@@ -136,8 +136,14 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action":"removeClass", "source":"#taxes", "class":"hidden"},
 					{"action": "removeClass", "source":"#cra-abroad", "class": "hidden"},
 					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
-					{"action": "append", "source":"#question-biz"}
-				]'>Tax refunds and tax benefits (including the Canada Child Benefit)</li>
+					{"action": "append", "source":"#question2"}
+				]'>Income tax refunds, Working Income Tax Benefit, GST/HST credit or provincial equivalent</li>
+				<li data-wb-fieldflow='[
+					{"action":"removeClass", "source":"#taxes", "class":"hidden"},
+					{"action": "removeClass", "source":"#cra-abroad", "class": "hidden"},
+					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
+					{"action": "append", "source":"#question2"}
+				]'>Canada Child Benefit</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#cppoas", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
@@ -148,27 +154,40 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				]'>Canadian Government Annuities</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#eileave", "class":"hidden"},
+					{"action": "removeClass", "source":"#other-NA-abroad", "class": "hidden"},
+					{"action": "removeClass", "source":"#EI-foreign-NA", "class": "hidden"},
+					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
 					{"action": "append", "source":"#question2"}
 				]'>Employment Insurance (EI) benefits and leave</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#apprenticeship", "class":"hidden"},
+					{"action": "removeClass", "source":"#other-NA-abroad", "class": "hidden"},
+					{"action": "removeClass", "source":"#apprenticeship-foreign-NA", "class": "hidden"},
+					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
 					{"action": "append", "source":"#question2"}
 				]'>Apprenticeship grants</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#veterans", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
-				]'>Veteran's Allowance Benefits</li>
+				]'>Veterans Allowance and Benefits</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#pension", "class":"hidden"}
 				]'>Federal Public Service Pension Plan</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#bonds", "class":"hidden"},
+					{"action": "removeClass", "source":"#other-NA-abroad", "class": "hidden"},
+					{"action": "removeClass", "source":"#bonds-foreign-NA", "class": "hidden"},
+					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
 					{"action": "append", "source":"#question2"}
 				]'>Canada Premium Savings Bond and Canada Savings Bond</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#indigenous", "class":"hidden"},
+					{"action": "removeClass", "source":"#other-NA-abroad", "class": "hidden"},
+					{"action": "removeClass", "source":"#Indigenous-foreign-NA", "class": "hidden"},
+					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
 					{"action": "append", "source":"#question-biz"}
 				]'>Indigenous payments, grants and contributions</li>
+				<li data-wb-fieldflow='{"action": "removeClass", "source":"#business-dd", "class": "hidden"}'>Businesses and government suppliers</li>
 				<li data-wb-fieldflow='{"action":"removeClass", "source":"#other-dd", "class":"hidden"}'>Other payments</li>
 			</ul>
 		</div>
@@ -182,7 +201,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 		</div>
 
 		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
-			<p>Do you want your this payment deposited into a Canadian or Foreign bank account?</p>
+			<p>Do you want this payment deposited into a Canadian or Foreign bank account?</p>
 			<ul>
 				<li data-wb-fieldflow='[
 					{"action": "removeClass", "source":"#canadian-acc", "class": "hidden"},
@@ -206,7 +225,15 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						<h2 class="panel-title">Direct deposit for CRA from abroad</h2>
 					 </header>
 					 <div class="panel-body">
-					 	<p>The Canada Revenue Agency does not yet issue payments to foreign bank accounts. If you have or can get a Canadian bank account, please use the directions below for direct deposit in Canada.</p>
+					 	<p>The Canada Revenue Agency does not yet issue payments to foreign bank accounts.<br /><br />If you have or can get a Canadian bank account, please use the directions below for direct deposit in Canada.</p>
+					 </div>
+				 </section>
+				 <section id="other-NA-abroad" class=" hidden panel panel-default">
+					 <header class="panel-heading">
+						<h2 class="panel-title">Direct deposit not available abroad</h2>
+					 </header>
+					 <div class="panel-body">
+					 	<p><span id="EI-foreign-NA" class="hidden">The Employment Insurance program</span><span id="apprenticeship-foreign-NA" class="hidden">The apprenticeship grants program</span><span id="Indigenous-foreign-NA" class="hidden">Indigenous and Northern Affairs Canada</span><span id="bonds-foreign-NA" class="hidden">The Bank of Canada</span> does not issue direct deposit payments to foreign bank accounts.<br /><br />If you have or can get a Canadian bank account, please use the directions below for direct deposit in Canada.</p>
 					 </div>
 				 </section>
 				<div id="foreign-available" class="" >
@@ -216,14 +243,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 
 			<div id="canadian-acc" class="hidden">
-					<div id="bonds" class="hidden" >
-						<p><a href="https://www.mybonds.gc.ca/taskmanager.cfm?newLang=EN&taskname=logon" class="btn btn-lg btn-primary mrgn-tp-md">Bank of Canada direct deposit online</a></p>
-						<h2>Other ways to sign up or change bank information for Canada Premium Savings Bonds and Canada Savings Bonds</h2>
-						<dl class="dl-horizontal">
-					  <dt>By mail:</dt>
-						<dd>complete this form and send it to the address within.<ul><li><a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Bank of Canada direct deposit form</a></li></dd>
-						</dl>
-					</div>
+
 
 					<div id="veterans" class="hidden" >
 						<p><a href="http://www.veterans.gc.ca/eng/e_services" class="btn btn-lg btn-primary mrgn-tp-md">Veterans direct deposit online</a></p>
@@ -263,35 +283,46 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						<dd>1-506-548-7428 (Monday to Friday, 8am to 4pm AST)</dd>
 					</div>
 
-					<div id="eileave" class="hidden">
-						<p><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My Service Canada Account</a></p>
-						<section class="gc-cntct-lst">
-						<h2>Other ways to sign up or change bank information for EI and leave</h2>
-						<dl class="dl-horizontal">
-						<dt>By phone:</dt>
-						<dd>1-800-206-7218</dd>
-						<dt>By TTY:</dt>
-						<dd>1-800-529-3742</dd>
-						<dt>In person:</dt>
-						<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
-					</div>
-
-					<div id="apprenticeship" class="hidden">
-						<h2>Sign up or change banking information for apprenticeship grants</h2>
-						<dt>By phone:</dt>
-						<dd>1-866-724-3644</dd>
-						<dt>By TTY:</dt>
-						<dd>1-866-909-9757</dd>
-					</div>
-
-					<div id="indigenous" class="hidden">
-						<h2>Sign up or change banking information for apprenticeship grants</h2>
-						<dt>By mail:</dt>
-						<dd>complete the direct deposit form and send it to the address within.<ul><li><a href="http://www.aadnc-aandc.gc.ca/eng/1100100010801/1100100010804">Indigenous and Northern Affairs Canada forms</a></li></dd>
-					</div>
-
 			</div>
+
+
 			<div id="canadian-taxes" class="hidden">
+				<div id="indigenous" class="hidden">
+					<h2>Sign up or change banking information for apprenticeship grants</h2>
+					<dt>By mail:</dt>
+					<dd>complete the direct deposit form and send it to the address within.<ul><li><a href="http://www.aadnc-aandc.gc.ca/eng/1100100010801/1100100010804">Indigenous and Northern Affairs Canada forms</a></li></dd>
+				</div>
+
+				<div id="apprenticeship" class="hidden">
+					<h2>Sign up or change banking information for apprenticeship grants</h2>
+					<dt>By phone:</dt>
+					<dd>1-866-724-3644</dd>
+					<dt>By TTY:</dt>
+					<dd>1-866-909-9757</dd>
+				</div>
+
+				<div id="bonds" class="hidden" >
+					<p><a href="https://www.mybonds.gc.ca/taskmanager.cfm?newLang=EN&taskname=logon" class="btn btn-lg btn-primary mrgn-tp-md">Bank of Canada direct deposit online</a></p>
+					<h2>Other ways to sign up or change bank information for Canada Premium Savings Bonds and Canada Savings Bonds</h2>
+					<dl class="dl-horizontal">
+					<dt>By mail:</dt>
+					<dd>complete this form and send it to the address within.<ul><li><a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Bank of Canada direct deposit form</a></li></dd>
+					</dl>
+				</div>
+
+				<div id="eileave" class="hidden">
+					<p><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My Service Canada Account</a></p>
+					<section class="gc-cntct-lst">
+					<h2>Other ways to sign up or change bank information for EI and leave</h2>
+					<dl class="dl-horizontal">
+					<dt>By phone:</dt>
+					<dd>1-800-206-7218</dd>
+					<dt>By TTY:</dt>
+					<dd>1-800-529-3742</dd>
+					<dt>In person:</dt>
+					<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
+				</div>
+
 				<div id="taxes" class="hidden">
 					<p><a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My CRA Account (for individuals)</a></p>
 					<section class="gc-cntct-lst">
