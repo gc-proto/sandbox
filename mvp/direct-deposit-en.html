@@ -129,7 +129,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				"noForm": true,
 				"base": {"live": true},
 				"default": {"action": "addClass", "source":"#question1,question2,question-biz,#business-dd,#foreign-acc,#canadian-acc,#canadian-taxes,#other-dd", "class":"hidden"},
-				"reset": [{"action": "addClass", "source":"#cra-abroad,#taxes,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes,#Indigenous-foreign-NA,#apprenticeship-foreign-NA,#EI-foreign-NA,#bonds-foreign-NA,#other-NA-abroad", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
+				"reset": [{"action": "addClass", "source":"#cra-abroad,#newid1,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes,#Indigenous-foreign-NA,#apprenticeship-foreign-NA,#EI-foreign-NA,#bonds-foreign-NA,#other-NA-abroad", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
 			}'>
 			<p>Select your payment for direct deposit:</p>
 			<ul>
@@ -138,13 +138,13 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action": "append", "source":"#question2"}
 				]'>Canada Pension Plan (CPP) or Old Age Security (OAS)</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#taxes", "class":"hidden"},
+					{"action":"removeClass", "source":"#newid1", "class":"hidden"},
 					{"action": "removeClass", "source":"#cra-abroad", "class": "hidden"},
 					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
 					{"action": "append", "source":"#question2"}
 				]'>Income tax refunds, Working Income Tax Benefit, GST/HST credit or provincial equivalent</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#taxes", "class":"hidden"},
+					{"action":"removeClass", "source":"#newid1", "class":"hidden"},
 					{"action": "removeClass", "source":"#cra-abroad", "class": "hidden"},
 					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
 					{"action": "append", "source":"#question2"}
@@ -288,7 +288,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 
 
 			<div id="canadian-taxes" class="hidden">
-				<div id="taxes" class="hidden">
+				<div id="newid1" class="hidden">
 					<p><a href="https://www.canada.ca/en/revenue-agency/services/e-services/e-services-individuals/account-individuals.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My CRA Account (for individuals)</a></p>
 					<h2>Other ways to sign up or change bank information for:</h2>
 						<ul>
