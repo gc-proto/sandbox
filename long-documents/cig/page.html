@@ -97,28 +97,29 @@ color: white;
 	
 /* The sidebar menu */
 .sidenav {
-    width: 350px /* Set the width of the sidebar */
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     z-index: 1; /* Stay on top */
-    top: 30px; /* Stay at the top */
-    left: 5px;
-    background-color: #fff
-    padding: 10px 0;
-
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
 }
-	
-	/* The navigation menu links */
+
+/* The navigation menu links */
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 12px;
-    color: #064579;
+    font-size: 25px;
+    color: #818181;
     display: block;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-    color: #064579;
+    color: #f1f1f1;
 }
 
 /* Style page content */
