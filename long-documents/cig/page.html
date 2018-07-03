@@ -104,29 +104,10 @@ color: white;
     top: 0; /* Stay at the top */
     left: 0;
     background-color: #
-/* The sidebar menu */
-.sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #
-/* The sidebar menu */
-.sidenav {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #FFFFFF; /* White */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
 
-/* The navigation menu links */
+}
+	
+	/* The navigation menu links */
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -135,59 +116,10 @@ color: white;
     display: block;
 }
 
-
-
-/* Style page content */
-.main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
 }
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-
-
-/* Style page content */
-.main {
-    margin-left: 160px; /* Same as the width of the sidebar */
-    padding: 0px 10px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}; /* Black */
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-    padding: 6px 8px 6px 16px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-}
-
-
 
 /* Style page content */
 .main {
@@ -200,6 +132,7 @@ color: white;
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
 }
+
 </style>
 
 
@@ -291,7 +224,25 @@ color: white;
 	
 <!-- Side navigation -->
 <div class="sidenav">
-<details class="mrgn-bttm-sm">
+<form style="margin-bottom:1.5em" action="autism-cig-results.html" method="get" name="cse-search-box" role="search" class="form-inline">
+<div class="form-group">
+	<input id="wb-srch-q" list="wb-srch-q-ac" class="wb-srch-q form-control" name="as_q" type="search" value="" size="27" maxlength="150" placeholder="Search the guide"/>
+</div>
+<div class="form-group submit">
+	<button type="submit" id="wb-srch-sub" class="btn btn-primary btn-small" name="wb-srch-sub"><span class="glyphicon-search glyphicon"></span><span class="wb-inv">Search</span></button>
+</div>
+<input type="hidden" name="1s_s3t2s21rch" value="www.canada.ca/en/public-health/services/canadian-immunization-guide">
+<input type="hidden" name="cdn" value="canada">
+<input type="hidden" name="st" value="a">
+<input type="hidden" name="num" value="10">
+<input type="hidden" name="st1rt" value="1">
+<input type="hidden" name="langs" value="en">
+<input type="hidden" name="s5bm3ts21rch" value="x">
+<input type="hidden" name="as_qdr" value="all">
+<input type="hidden" name="as_occt" value="all">
+</form>
+
+	<details class="mrgn-bttm-sm">
   <summary class="wb-toggle" data-toggle="{&quot;print&quot;:&quot;on&quot;}">Part 1: Key immunization information</summary>
         <ul>
     <li><a href="/en/public-health/services/publications/healthy-living/canadian-immunization-guide-part-1-key-immunization-information/page-2-immunization-in-canada.html">Immunization in Canada</a></li>
