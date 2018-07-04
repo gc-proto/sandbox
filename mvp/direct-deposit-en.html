@@ -129,7 +129,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				"noForm": true,
 				"base": {"live": true},
 				"default": {"action": "addClass", "source":"#question1,question2,question-biz,#business-dd,#foreign-acc,#canadian-acc,#canadian-taxes,#other-dd", "class":"hidden"},
-				"reset": [{"action": "addClass", "source":"#cra-abroad,#newid1,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes,#Indigenous-foreign-NA,#apprenticeship-foreign-NA,#EI-foreign-NA,#bonds-foreign-NA,#other-NA-abroad", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
+				"reset": [{"action": "addClass", "source":"#cra-abroad,#newid1,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes,#Indigenous-foreign-NA,#apprenticeship-foreign-NA,#EI-foreign-NA,#bonds-foreign-NA,#other-NA-abroad,#foreign-pension", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
 			}'>
 			<p>Select your payment for direct deposit:</p>
 			<ul>
@@ -172,7 +172,10 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action": "append", "source":"#question2"}
 				]'>Veterans Allowance and Benefits</li>
 				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#pension", "class":"hidden"}
+					{"action":"removeClass", "source":"#pension", "class":"hidden"},
+					{"action":"removeClass", "source":"#foreign-pension", "class":"hidden"},
+					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
+					{"action": "append", "source":"#question2"}
 				]'>Federal Public Service Pension Plan</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#bonds", "class":"hidden"},
@@ -240,6 +243,15 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				<div id="foreign-available" class="" >
 					<a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false" class="btn btn-primary">Direct deposit with a foreign bank account</a><br /><br />
 				</div>
+				<div id="foreign-pension" class="hidden" >
+					<h2>Direct deposit with a foreign bank account for the Federal Public Service Pension Plan</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone (collect calls accepted):</dt>
+						<dd>506-533-5800 (Monday to Friday 8:00 a.m. to 5:00 p.m. Atlantic Time)</dd>
+						<dt>By mail:</dt>
+						<dd>complete the direct deposit form on the page linked below and send it to the address indicated within.<ul><li><a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false">Direct deposit form for individuals with a foreign bank account</a></li></ul></dd>
+					</dl>
+				</div>
 			 </div>
 
 
@@ -250,8 +262,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						<p><a href="http://www.veterans.gc.ca/eng/e_services" class="btn btn-lg btn-primary mrgn-tp-md">Veterans direct deposit online</a></p>
 						<h2>Other ways to sign up or change bank information for Veterans Allowances and Benefits</h2>
 						<dl class="dl-horizontal">
-					  <dt>By mail:</dt>
-						<dd>complete this form and send it to the address on the page.<ul><li><a href="http://www.veterans.gc.ca/eng/services/resources/direct-deposit">veterans direct deposit instructions by mail</a></li></dd>
+						  <dt>By mail:</dt>
+							<dd>complete this form and send it to the address on the page.<ul><li><a href="http://www.veterans.gc.ca/eng/services/resources/direct-deposit">veterans direct deposit instructions by mail</a></li></dd>
 						</dl>
 					</div>
 
@@ -260,14 +272,14 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						<section class="gc-cntct-lst">
 						<h2>Other ways to sign up or change bank information for CPP or OAS</h2>
 						<dl class="dl-horizontal">
-						<dt>By phone:</dt>
-						<dd>1-800-277-9914</dd>
-						<dt>By TTY:</dt>
-						<dd>1-800-255-4786</dd>
-						<dt>In person:</dt>
-						<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
-						<dt>By mail (up to 3 months to process):</dt>
-						<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<br><br><ul><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
+							<dt>By phone:</dt>
+							<dd>1-800-277-9914</dd>
+							<dt>By TTY:</dt>
+							<dd>1-800-255-4786</dd>
+							<dt>In person:</dt>
+							<dd>at your nearest <a href="http://www.servicecanada.gc.ca/tbsc-fsco/sc-hme.jsp?lang=eng">Service Canada office</a></dd>
+							<dt>By mail (up to 3 months to process):</dt>
+							<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<br><br><ul><li><a href="http://www.tpsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tpsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
 						</dl>
 					</div>
 
@@ -276,12 +288,27 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 						<section class="gc-cntct-lst">
 						<h2>Other ways to sign up or change bank information for Canadian Government Annuities</h2>
 						<dl class="dl-horizontal">
-						<dt>By phone (Canada and the US):</dt>
-						<dd>1-800-561-7922 (Monday to Friday, 8am to 4pm AST)</dd>
-						<dt>By Phone (outside North America):</dt>
-						<dd>1-506-548-7972 (call collect; Monday to Friday, 8am to 4pm AST)</dd>
-						<dt>By Fax:</dt>
-						<dd>1-506-548-7428 (Monday to Friday, 8am to 4pm AST)</dd>
+							<dt>By phone (Canada and the US):</dt>
+							<dd>1-800-561-7922 (Monday to Friday, 8am to 4pm AST)</dd>
+							<dt>By Phone (outside North America):</dt>
+							<dd>1-506-548-7972 (call collect; Monday to Friday, 8am to 4pm AST)</dd>
+							<dt>By Fax:</dt>
+							<dd>1-506-548-7428 (Monday to Friday, 8am to 4pm AST)</dd>
+						</dl>
+					</div>
+
+					<div id="pension" class="hidden">
+						<h2>Sign up or change bank information for the Federal Public Service Pension Plan</h2>
+						<dl class="dl-horizontal">
+							<dt>By phone:</dt>
+							<dd>1-800-561-7930 (toll-free; Monday to Friday 8am to 4pm your local time)</dd>
+							<dt>By email:</dt>
+							<dd>To pwgsc.pensioncentre-centredespensions.tpsgc@pwgsc-tpsgc.gc.ca</dd>
+							<dt>In person:</dt>
+							<dd>Most banks and financial institutions in Canada, including those listed below, will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.</dd>
+							<dt>By mail (up to 3 months to process):</dt>
+							<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<ul><li><a href="http://www.tpsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tpsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
+						</dl>
 					</div>
 
 			</div>
@@ -298,27 +325,31 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 							<li>GST/HST Credit or Provincial Equivalents</li>
 						</ul>
 					<dl class="dl-horizontal">
-					<dt>By phone:</dt>
-					<dd>1-800-959-8281</dd>
-					<dt>In person:</dt>
-					<dd>Most financial institutions in Canada, including those listed below, will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.<ul><li>Bank of Montreal</li><li>Canadian Imperial Bank of Commerce (CIBC)</li><li>Desjardins</li><li>Royal Bank of Canada (RBC)</li><li>Toronto Dominion (TD)</li><li>Scotiabank</li><li>most credit unions</li></ul></dd>
-					<dt>By mail (up to 3 months to process):</dt>
-					<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<ul><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
+						<dt>By phone:</dt>
+						<dd>1-800-959-8281</dd>
+						<dt>In person:</dt>
+						<dd>Most banks and financial institutions in Canada will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.</dd>
+						<dt>By mail (up to 3 months to process):</dt>
+						<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<ul><li><a href="http://www.tpsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tpsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
 					</dl>
 				</div>
 
 				<div id="indigenous" class="hidden">
 					<h2>Sign up or change banking information for apprenticeship grants</h2>
-					<dt>By mail:</dt>
-					<dd>complete the direct deposit form and send it to the address within.<ul><li><a href="http://www.aadnc-aandc.gc.ca/eng/1100100010801/1100100010804">Indigenous and Northern Affairs Canada forms</a></li></dd>
+					<dl class="dl-horizontal">
+						<dt>By mail:</dt>
+						<dd>complete the direct deposit form and send it to the address indicated within.<ul><li><a href="http://www.aadnc-aandc.gc.ca/eng/1100100010801/1100100010804">Indigenous and Northern Affairs Canada forms</a></li></dd>
+					</dl>
 				</div>
 
 				<div id="apprenticeship" class="hidden">
 					<h2>Sign up or change banking information for apprenticeship grants</h2>
-					<dt>By phone:</dt>
-					<dd>1-866-724-3644</dd>
-					<dt>By TTY:</dt>
-					<dd>1-866-909-9757</dd>
+					<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>1-866-724-3644</dd>
+						<dt>By TTY:</dt>
+						<dd>1-866-909-9757</dd>
+					</dl>
 				</div>
 
 				<div id="bonds" class="hidden" >
@@ -326,7 +357,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					<h2>Other ways to sign up or change bank information for Canada Premium Savings Bonds and Canada Savings Bonds</h2>
 					<dl class="dl-horizontal">
 						<dt>By mail:</dt>
-						<dd>complete this form and send it to the address within.<ul><li><a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Bank of Canada direct deposit form</a></li></dd>
+						<dd>complete this form and send it to the address indicated within.<ul><li><a href="https://www.csb.gc.ca/wp-content/uploads/2009/05/coadd-04-09.pdf">Bank of Canada direct deposit form</a></li></dd>
 					</dl>
 				</div>
 
@@ -343,20 +374,6 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					</dl>
 				</div>
 
-
-			</div>
-
-			<div id="pension" class="hidden">
-				<h2>Sign up or change bank information for the Federal Public Service Pension Plan</h2>
-				<dl class="dl-horizontal">
-				<dt>By phone:</dt>
-				<dd>1-800-561-7930 (toll-free; Monday to Friday 8am to 4pm your local time)</dd>
-				<dt>By email:</dt>
-				<dd>To pwgsc.pensioncentre-centredespensions.tpsgc@pwgsc-tpsgc.gc.ca</dd>
-				<dt>In person:</dt>
-				<dd>Most financial institutions in Canada, including those listed below, will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.<ul><li>Bank of Montreal</li><li>Canadian Imperial Bank of Commerce (CIBC)</li><li>Desjardins</li><li>Royal Bank of Canada (RBC)</li><li>Toronto Dominion (TD)</li><li>Scotiabank</li><li>most credit unions</li></ul></dd>
-				<dt>By mail (up to 3 months to process):</dt>
-				<dd>complete this form and send it to the Receiver General for Canada (address at the bottom of the form).<ul><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/form/inscription-enrolment-eng.html">Canada Direct Deposit enrolment form (fill online)</a></li><li><a href="http://www.tbsgc-pwgsc.gc.ca/recgen/pdf/canada-eng.pdf">Canada Direct Deposit enrolment (print then fill)</a></li></dd>
 			</div>
 
 			<div id="business-dd" class="hidden" >
