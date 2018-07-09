@@ -128,8 +128,9 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				"renderas":"radio",
 				"noForm": true,
 				"base": {"live": true},
-				"default": {"action": "addClass", "source":"#question1,question2,question-biz,#business-dd,#foreign-acc,#canadian-acc,#canadian-taxes,#other-dd", "class":"hidden"},
-				"reset": [{"action": "addClass", "source":"#cra-abroad,#newid1,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#pension,#indigenous,#question1,#question2,#canadian-taxes,#Indigenous-foreign-NA,#apprenticeship-foreign-NA,#EI-foreign-NA,#bonds-foreign-NA,#other-NA-abroad,#foreign-pension", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
+				"noreqlabel": true,
+				"default": {"action": "addClass", "source":"#question1,question2,question-biz,#business-dd,#foreign-acc,#canadian-acc,#canadian-taxes,#other-dd,#public-service-pay,#pension-foreign-answers,#pension-domestic-answers", "class":"hidden"},
+				"reset": [{"action": "addClass", "source":"#foreign-pension,#foreign-rcmp-pension,#foreign-caf-pension,#foreign-judges-pension,#domestic-rcmp-pension,#domestic-caf-pension,#domestic-judges-pension,#pension,#cra-abroad,#newid1,#cppoas,#annuities,#eileave,#apprenticeship,#veterans,#bonds,#indigenous,#question1,#question2,#canadian-taxes,#Indigenous-foreign-NA,#apprenticeship-foreign-NA,#EI-foreign-NA,#bonds-foreign-NA,#other-NA-abroad", "class":"hidden"}, {"action": "removeClass", "source":"#foreign-available", "class":"hidden"}]
 			}'>
 			<p>Select your payment for direct deposit:</p>
 			<ul>
@@ -171,12 +172,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action":"removeClass", "source":"#veterans", "class":"hidden"},
 					{"action": "append", "source":"#question2"}
 				]'>Veterans Allowance and Benefits</li>
-				<li data-wb-fieldflow='[
-					{"action":"removeClass", "source":"#pension", "class":"hidden"},
-					{"action":"removeClass", "source":"#foreign-pension", "class":"hidden"},
-					{"action": "addClass", "source":"#foreign-available", "class": "hidden"},
-					{"action": "append", "source":"#question2"}
-				]'>Federal Public Service Pension Plan</li>
+				<li data-wb-fieldflow='{"action": "append", "source":"#pension-question"}'>Federal Public Service Pension Plan</li>
+				<li data-wb-fieldflow='{"action":"removeClass", "source":"#public-service-pay", "class":"hidden"}'>Federal Public Service Pay</li>
 				<li data-wb-fieldflow='[
 					{"action":"removeClass", "source":"#bonds", "class":"hidden"},
 					{"action": "removeClass", "source":"#other-NA-abroad", "class": "hidden"},
@@ -196,7 +193,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 			</ul>
 		</div>
 
-		<div id="question-biz" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+		<div id="question-biz" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio","noreqlabel": true}'>
 			<p>Are you setting up direct deposit for a business/supplier?</p>
 			<ul>
 				<li data-wb-fieldflow='{"action": "removeClass", "source":"#business-dd", "class": "hidden"}'>Yes - for a business</li>
@@ -204,7 +201,7 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 			</ul>
 		</div>
 
-		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio"}'>
+		<div id="question2" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio","noreqlabel": true}'>
 			<p>Do you want this payment deposited into a Canadian or Foreign bank account?</p>
 			<ul>
 				<li data-wb-fieldflow='[
@@ -215,6 +212,40 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					{"action": "removeClass", "source":"#foreign-acc", "class": "hidden"},
 					{"action": "removeClass", "source":"#canadian-taxes", "class": "hidden"}
 				]'>Foreign</li>
+			</ul>
+		</div>
+
+		<div id="pension-question" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"noreqlabel": true,"default": {"action": "addClass", "source":"#pension-foreign-answers,#pension-domestic-answers,#foreign-pension,#foreign-rcmp-pension,#foreign-caf-pension,#foreign-judges-pension,#domestic-rcmp-pension,#domestic-caf-pension,#domestic-judges-pension,#pension", "class":"hidden"},"renderas":"radio"}'>
+			<p>Please select your public service pension plan</p>
+			<ul>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#foreign-pension", "class": "hidden"},
+					{"action": "removeClass", "source":"#pension", "class": "hidden"},
+					{"action": "append", "source":"#pension-foreign-question"}
+				]'>Federal Public Service Pension</li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#foreign-rcmp-pension", "class": "hidden"},
+					{"action": "removeClass", "source":"#domestic-rcmp-pension", "class": "hidden"},
+					{"action": "append", "source":"#pension-foreign-question"}
+				]'>RCMP Pension</li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#foreign-caf-pension", "class": "hidden"},
+					{"action": "removeClass", "source":"#domestic-caf-pension", "class": "hidden"},
+					{"action": "append", "source":"#pension-foreign-question"}
+				]'>Canadian Armed Forces Pension</li>
+				<li data-wb-fieldflow='[
+					{"action": "removeClass", "source":"#foreign-judges-pension", "class": "hidden"},
+					{"action": "removeClass", "source":"#domestic-judges-pension", "class": "hidden"},
+					{"action": "append", "source":"#pension-foreign-question"}
+				]'>Judges Pension</li>
+			</ul>
+		</div>
+
+		<div id="pension-foreign-question" class="wb-fieldflow-sub hidden" data-wb-fieldflow='{"renderas":"radio","noreqlabel": true}'>
+			<p>Do you want this payment deposited into a Canadian or Foreign bank account?</p>
+			<ul>
+				<li data-wb-fieldflow='{"action": "removeClass", "source":"#pension-domestic-answers", "class": "hidden"}'>Canadian</li>
+				<li data-wb-fieldflow='{"action": "removeClass", "source":"#pension-foreign-answers", "class": "hidden"}'>Foreign</li>
 			</ul>
 		</div>
 
@@ -243,17 +274,17 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 				<div id="foreign-available" class="" >
 					<a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false" class="btn btn-primary">Direct deposit with a foreign bank account</a><br /><br />
 				</div>
-				<div id="foreign-pension" class="hidden" >
-					<h2>Direct deposit with a foreign bank account for the Federal Public Service Pension Plan</h2>
-					<dl class="dl-horizontal">
-						<dt>By phone (collect calls accepted):</dt>
-						<dd>506-533-5800 (Monday to Friday 8:00 a.m. to 5:00 p.m. Atlantic Time)</dd>
-						<dt>By mail:</dt>
-						<dd>complete the direct deposit form on the page linked below and send it to the address indicated within.<ul><li><a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false">Direct deposit form for individuals with a foreign bank account</a></li></ul></dd>
-					</dl>
-				</div>
 			 </div>
 
+
+			 <section id="public-service-pay" class=" hidden panel panel-default">
+				 <header class="panel-heading">
+					<h2 class="panel-title">Direct deposit for public service pay</h2>
+				 </header>
+				 <div class="panel-body">
+					<p>Current federal public servants should consult the Public Service Pay Centre for direct deposit issues related to their pay.<br /><ul><li><a href="www.tpsgc-pwgsc.gc.ca/remuneration-compensation/services-paye-pay-services/paye-centre-pay/depot-direct-deposit-eng.html">Start, amend or stop direct deposit of regular pay</a></li></ul></p>
+				 </div>
+			 </section>
 
 			<div id="canadian-acc" class="hidden">
 
@@ -284,9 +315,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 					</div>
 
 					<div id="annuities" class="hidden">
-						<p><a href="https://www.canada.ca/en/employment-social-development/services/my-account.html" class="btn btn-lg btn-primary mrgn-tp-md">Direct deposit with My Service Canada Account</a></p>
 						<section class="gc-cntct-lst">
-						<h2>Other ways to sign up or change bank information for Canadian Government Annuities</h2>
+						<h2>Sign up for direct deposit or change bank information for Canadian Government Annuities</h2>
 						<dl class="dl-horizontal">
 							<dt>By phone (Canada and the US):</dt>
 							<dd>1-800-561-7922 (Monday to Friday, 8am to 4pm AST)</dd>
@@ -294,18 +324,8 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 							<dd>1-506-548-7972 (call collect; Monday to Friday, 8am to 4pm AST)</dd>
 							<dt>By Fax:</dt>
 							<dd>1-506-548-7428 (Monday to Friday, 8am to 4pm AST)</dd>
-						</dl>
-					</div>
-
-					<div id="pension" class="hidden">
-						<h2>Sign up or change bank information for the Federal Public Service Pension Plan</h2>
-						<dl class="dl-horizontal">
-							<dt>By phone:</dt>
-							<dd>1-800-561-7930 (toll-free; Monday to Friday 8am to 4pm your local time)</dd>
-							<dt>By email:</dt>
-							<dd>To pwgsc.pensioncentre-centredespensions.tpsgc@pwgsc-tpsgc.gc.ca</dd>
-							<dt>In person:</dt>
-							<dd>Most banks and financial institutions in Canada will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.</dd>
+							<dt>By Mail:</dt>
+							<dd>Canadian Government Annuities Branch<br />Employment and Social Development Canada<br />P.O. Box 12,000<br />Bathurst NB E2A 4T6</dd>
 						</dl>
 					</div>
 
@@ -391,6 +411,95 @@ wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licenc
 							<ul><li><a href="https://www.canada.ca/en/government/dept.html">find the department that pays you in the departments listing</a></li></ul>
 					</div>
 				</section>
+			</div>
+
+			<div id="pension-foreign-answers" class="hidden">
+				<div id="foreign-pension" class="hidden" >
+					<h2>Direct deposit with a foreign bank account for the Federal Public Service Pension Plan</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone (collect calls accepted):</dt>
+						<dd>506-533-5800 (Monday to Friday 8:00 a.m. to 5:00 p.m. Atlantic Time)</dd>
+						<dt>By mail:</dt>
+						<dd>complete the direct deposit form on the page linked below and send it to the address indicated within.<ul><li><a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false">Direct deposit form for individuals with a foreign bank account</a></li></ul></dd>
+					</dl>
+				</div>
+				<div id="foreign-rcmp-pension" class="hidden" >
+					<h2>Direct deposit with a foreign bank account for an RCMP pension plan</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone (Outside Canada and the United States):</dt>
+						<dd>1-506-533-5800 (Monday to Friday 8:00 a.m. to 4:00 p.m.)</dd>
+						<dt>By phone (From within Canada or the United States):</dt>
+						<dd>1-800-267-0325 (Monday to Friday 8:00 a.m. to 4:00 p.m.)</dd>
+						<dt>By email:</dt>
+						<dd>To pensioncentrercmp.centredespensionsgrc@pwgsc-tpsgc.gc.ca</dd>
+						<dt>By mail:</dt>
+						<dd>complete the direct deposit form on the page linked below and send it to the address indicated within.<ul><li><a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false">Direct deposit form for individuals with a foreign bank account</a></li></ul></dd>
+					</dl>
+				</div>
+				<div id="foreign-caf-pension" class="hidden" >
+					<h2>Direct deposit with a foreign bank account for Canadian Armed Forces pension plans</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone (collect calls accepted):</dt>
+						<dd>613-946-1093 (Monday to Friday 8:00 a.m. to 4:00 p.m. EST - excluding statutory holidays)</dd>
+						<dt>By email:</dt>
+						<dd>To pensioncentrecaf.centredespensionsfac@pwgsc-tpsgc.gc.ca</dd>
+						<dt>By mail:</dt>
+						<dd>complete the direct deposit form on the page linked below and send it to the address indicated within.<ul><li><a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false">Direct deposit form for individuals with a foreign bank account</a></li></ul></dd>
+					</dl>
+				</div>
+				<div id="foreign-judges-pension" class="hidden" >
+					<h2>Direct deposit with a foreign bank account for judges' pension plans</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>613-995-5140</dd>
+						<dt>By email:</dt>
+						<dd>To info@fja-cmf.gc.ca</dd>
+						<dt>By mail:</dt>
+						<dd>complete the direct deposit form on the page linked below and send it to the address indicated within.<ul><li><a href="https://www.tpsgc-pwgsc.gc.ca/recgen/dd/etranger-abroad-eng.html?wbdisable=false">Direct deposit form for individuals with a foreign bank account</a></li></ul></dd>
+					</dl>
+				</div>
+			</div>
+
+			<div id="pension-domestic-answers" class="hidden">
+				<div id="pension" class="hidden">
+					<h2>Sign up or change bank information for the Federal Public Service Pension Plan</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>1-800-561-7930 (toll-free; Monday to Friday 8:00 a.m. to 4:00 p.m. your local time)</dd>
+						<dt>By email:</dt>
+						<dd>To pwgsc.pensioncentre-centredespensions.tpsgc@pwgsc-tpsgc.gc.ca</dd>
+						<dt>In person:</dt>
+						<dd>Most banks and financial institutions in Canada will be pleased to assist you in completing a single direct deposit enrolment form for one or several of your Government of Canada payments.</dd>
+					</dl>
+				</div>
+				<div id="domestic-rcmp-pension" class="hidden">
+					<h2>Sign up or change bank information for an RCMP pension plan</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>1-855-502-7090</dd>
+						<dt>By email:</dt>
+						<dd>To pensioncentrercmp.centredespensionsgrc@pwgsc-tpsgc.gc.ca</dd>
+					</dl>
+				</div>
+				<div id="domestic-caf-pension" class="hidden">
+					<h2>Sign up or change bank information for Canadian Armed Forces pension plans</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>1-800-267-0325 (Monday to Friday 8:00 a.m. to 4:00 p.m.)</dd>
+						<dt>By email:</dt>
+						<dd>To pensioncentrecaf.centredespensionsfac@pwgsc-tpsgc.gc.ca</dd>
+					</dl>
+				</div>
+				<div id="domestic-judges-pension" class="hidden">
+					<h2>Sign up or change bank information for for judges' pension plans</h2>
+					<dl class="dl-horizontal">
+						<dt>By phone:</dt>
+						<dd>1-877-583-4266 (Monday to Friday 8:00 a.m. to 4:00 p.m.)</dd>
+						<dt>By email:</dt>
+						<dd>To info@fja-cmf.gc.ca</dd>
+					</dl>
+				</div>
+
 			</div>
 
  </form>
