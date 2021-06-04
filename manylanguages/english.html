@@ -471,22 +471,39 @@
 
 	ol.breadcrumb {
 		padding-inline-start: 0em !important;
+padding: 0 !important;
 	}
 
 	ul#multilingual-list {
-		display: inline;
+		display: inline-block;
 		padding-inline-start: 0 !important;
+		margin-bottom: 3em !important;
 	}
 
 		ul#multilingual-list li {
 			display: inline-block;
-			padding: 15px 20px 40px 0px !important;
 		}
+
+			ul#multilingual-list li a {
+				display: block;
+				padding: 10px 20px 10px 0px !important;
+			}
+			ul#multilingual-list li a:first-child {
+				display: block;
+				padding: 10px 20px 10px 0px !important;
+			}
+			ul#multilingual-list li span.currentpage {
+				display: block;
+				padding: 10px 20px 10px 0px !important;
+			}
+			ul#multilingual-list li span:first-child {
+				padding-left: 0px !important;
+			}
 
 </style>
 
 <ul id="multilingual-list">
-<li>English</li>
+<li><span class="currentpage">English</span></li>
 <li><a href="https://test.canada.ca/sandbox/manylanguages/francais.html" target="_self">Français</a></li>
 <li><a href="https://test.canada.ca/sandbox/manylanguages/inuktitut.html" target="_self">ᐃᓄᒃᑎᑐᑦ</a></li>
 <li><a href="#" target="_self">繁體中文</a></li>
