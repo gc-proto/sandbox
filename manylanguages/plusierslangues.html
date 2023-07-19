@@ -112,6 +112,25 @@
 
   <h2>Notes de conception</h2>
 
+<ul>
+	<li>Il s'agit d'une conception de niveau MVP qui n'a pas été testée - nous essayons de résoudre le problème spécifique d'une page unique qui comporte des versions linguistiques supplémentaires. Nous n'avons pas essayé de traiter des ensembles de pages ou des sections entières de sites disponibles dans des langues supplémentaires, car il s'agit d'un problème plus délicat à résoudre.</li>
+	<li>La démo se compose de 4 pages : les versions anglaise et française, et 2 pages représentant les langues supplémentaires :</li>
+		<ul>
+			<li>Une version en inuktitut - Dans la démo, le lien ressemble à ᐃᓄᒃᑎᑐᑦ</li>
+			<li>Une version en farsi (pour représenter une langue de droite à gauche) - le lien ressemble à فارسی</li>
+			<li>Plusieurs liens vers des langues supplémentaires ont été inclus dans les pages de démonstration - ils ne fonctionnent pas, mais sont inclus pour montrer le traitement de ces liens pour un plus grand nombre de langues supplémentaires.</li>
+		</ul>
+	<li>Le mécanisme de navigation principal est un ensemble de liens vers les autres versions linguistiques, placés sous le H1 :</li>
+		<ul>
+			<li>Les liens linguistiques relient entre elles toutes les versions linguistiques de la page.</li>
+			<li>Ils sont placés dans le corps de la page pour éviter de donner l'impression que vous pouvez changer la langue de l'ensemble du site.</li>
+			<li>Ils sont placés juste sous le H1 pour minimiser la quantité de EN ou FR qu'un locuteur non natif aurait à traiter.</li>
+		</ul>
+	<li>Les versions linguistiques distinctes sont traitées comme des pages séparées afin de minimiser la quantité de "bruit" qu'une personne devrait traiter pour atteindre la langue dont elle a besoin. Nous émettons également l'hypothèse que cela fonctionnerait bien pour les moteurs de recherche, mais nous n'avons pas fait de recherches à ce sujet.</li>
+	<li>Les pages EN et FR conservent l'en-tête et le fil d'Ariane standard. Sur les pages en inuktitut et en farsi, l'en-tête du site est réduit autant que possible et le premier lien du fil d'Ariane renvoie à la page de choix de la langue de Canada.ca plutôt qu'à la page d'accueil en anglais ou en français.</li>
+	<li>Nous nous sommes demandé si nous devions conserver tous les liens linguistiques sur les pages en inuktitut et en farsi ou si nous devions nous contenter de renvoyer vers les versions en anglais ou en français.</li>
+</ul>
+	
 <!--
 <style>
 
